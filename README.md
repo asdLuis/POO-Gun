@@ -7,10 +7,10 @@ El programa permite a los usuarios seleccionar entre una variedad de opciones y 
 
 La funcionalidad principal del programa incluye:
 
-Registro: Los usuarios pueden registrar sus elecciones y preferencias para cada componente del rifle de asalto.
-Ensamblaje: el programa ensambla los componentes elegidos para crear el rifle de asalto personalizado.
-Validación: El programa asegura la compatibilidad de los componentes seleccionados y alerta a los usuarios en caso de conflictos o errores.
-Pantalla: El programa presenta una representación visual del rifle de asalto ensamblado, mostrando los componentes seleccionados y su configuración.
+### Registro: Los usuarios pueden registrar sus elecciones y preferencias para cada componente del rifle de asalto.
+### Ensamblaje: El programa ensambla los componentes elegidos para crear el rifle de asalto personalizado.
+### Validación: El programa asegura la compatibilidad de los componentes seleccionados y alerta a los usuarios en caso de conflictos o errores.
+### Pantalla: El programa presenta una representación visual del rifle de asalto ensamblado, mostrando los componentes seleccionados y su configuración.
 
 ## Consideraciones
 El programa Gun Assembly opera en la consola y se desarrolla utilizando la sintaxis estándar de C++, lo que lo hace compatible con varios sistemas operativos.
