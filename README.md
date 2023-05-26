@@ -1,3 +1,5 @@
+# A01705457 - Luis Isauro Zamano Morales 
+
 # Gun Assembly Program
 
 El Gun Assembly Program está diseñado como referencia para un proyecto enfocado al ensamblaje y personalización de armas de fuego. Proporciona una interfaz de usuario donde los usuarios pueden seleccionar varias opciones para construir su propio rifle de asalto personalizado. El programa emplea principios de Programación Orientada a Objetos en C++ para crear una estructura flexible y modular.
