@@ -7,15 +7,14 @@
 class Ammo {
     protected:
         std::string caliber;
-        int capacity;
     
     public:
         Ammo();
-        Ammo(std::string caliber, int capacity);
+        Ammo(std::string caliber);
         virtual ~Ammo() = default;
         std::string getAmmo();
         void setAmmo(std::string, int);
-        void greetUser();
+        void displayInfo();
 };
 
 Ammo::Ammo() {
@@ -23,22 +22,21 @@ Ammo::Ammo() {
     capacity = 0;
 }
 
-Ammo::Ammo(std::string caliber, int capacity) {
+Ammo::Ammo(std::string caliber) {
     this->caliber = caliber;
     this->capacity = capacity;
 }
 
 std::string Ammo::getAmmo() {
-    return "Caliber: " + caliber + "\nCapacity: " + std::to_string(capacity);
+    return "Caliber: " + caliber;
 }
 
-void Ammo::setAmmo(std::string caliber, int capacity) {
+void Ammo::setAmmo(std::string caliber) {
     this->caliber = caliber;
-    this->capacity = capacity;
 }
 
-void Ammo::greetUser() {
-    std::cout << "Hello, user! I am a bullet" << std::endl;
+void Ammo::displayInfo() {
+    std::cout << "Im a" << caliber << "caliber bullet! And not special" << std::endl;
 }
 
 #endif
