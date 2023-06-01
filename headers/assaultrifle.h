@@ -4,14 +4,14 @@
 #include <iostream>
 #include <string>
 
-#include "headers\grip.h"
-#include "headers\handguard.h"
-#include "headers\sight.h"
-#include "headers\stock.h"
-#include "headers\triggermechanism.h"
-#include "headers\magazine.h"
-#include "headers\fireselector.h"
-#include "headers\barrel.h"
+#include "./grip.h"
+#include "./handguard.h"
+#include "./sight.h"
+#include "./stock.h"
+#include "./triggermechanism.h"
+#include "./magazine.h"
+#include "./fireselector.h"
+#include "./barrel.h"
 
 class AssaultRifle {
     private:
@@ -24,23 +24,11 @@ class AssaultRifle {
         Handguard handguard;
         Grip grip;
     public:
-        AssaultRifle();
         AssaultRifle(Barrel barrel, Stock stock, TriggerMechanism triggerMechanism, FireSelector fireSelector, Magazine magazine, Sight sight, Handguard handguard, Grip grip);
         void assemble();
         void disassemble();
         void fire();
-}
-
-AssaultRifle::AssaultRifle() {
-    barrel = NULL;
-    stock = NULL;
-    triggerMechanism = NULL;
-    fireSelector = NULL;
-    magazine = NULL;
-    sight = NULL;
-    handguard = NULL;
-    grip = NULL;
-}
+};
 
 AssaultRifle::AssaultRifle(Barrel barrel, Stock stock, TriggerMechanism triggerMechanism, FireSelector fireSelector, Magazine magazine, Sight sight, Handguard handguard, Grip grip) {
     this->barrel = barrel;

@@ -24,7 +24,7 @@ FireSelector::FireSelector(bool toggleSelector) {
     this->toggleSelector = toggleSelector;
 };
 
-FireSelector::getFireSelector() {
+std::string FireSelector::getFireSelector() {
     if (toggleSelector) {
         return "Rate: Automatic";
     } else {
@@ -32,12 +32,12 @@ FireSelector::getFireSelector() {
     }
 };
 
-FireSelector::setFireSelector(bool toggleSelector) {
+void FireSelector::setFireSelector(bool toggleSelector) {
     this->toggleSelector = toggleSelector;
 };
 
-FireSelector::toggleFireSelector() {
-    toggleFireSelector = !toggleFireSelector;
+void FireSelector::toggleFireSelector() {
+    toggleSelector = !toggleSelector;
 }
 
 #endif

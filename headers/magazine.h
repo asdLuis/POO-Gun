@@ -3,58 +3,72 @@
 
 #include <iostream>
 #include <string>
-#include "headers\ammo.h"
+#include <vector>
+#include "./ammo.h"
+#include "./specialammo.h"
 
 class Magazine {
     private:
         // We create an array of Ammo objects to simulate a magazine.
-        Ammo ammo[0];
+        std::vector<Ammo *> ammo;
         int size;
     
     public:
         Magazine();
-        Magazine(Ammo ammo[], int size);
-        std::string getMagazine();
-        void setMagazine(Ammo ammo[], int size);
-        void addAmmo(Ammo ammo);
-        void removeAmmo();
+        Magazine(int size);
+        void getMagazine();
+        void addAmmo(std::string caliber, int capacity);
+        void addSpecialAmmo(std::string caliber, int capacity, std::string effects);
+        SpecialAmmo* getSpecialAmmo();
+        // void removeAmmo();
 };
 
 Magazine::Magazine() {
     size = 0;
 }
 
-Magazine::Magazine(Ammo ammo[], int size) {
+Magazine::Magazine(int size) {
     this->size = size;
-    for (int i = 0; i < size; i++) {
-        this->ammo[i] = ammo[i];
+}
+
+// Returns a string of all the ammo in the magazine.
+
+void Magazine::getMagazine() {
+    for(Ammo* am : ammo) {
+        std::cout << am->getAmmo() << std::endl;
     }
 }
 
-std::string Magazine::getMagazine() {
-    std::string bullets = "";
-    for (int i = 0; i < size; i++) {
-        bullets += ammo[i].getAmmo() + "\n";
+// Test start "getSpecialAmmo()"
+
+SpecialAmmo* Magazine::getSpecialAmmo() {
+    for(Ammo* am : ammo) {
+        if(dynamic_cast<SpecialAmmo*>(am)){
+            return dynamic_cast<SpecialAmmo*>(am);
+        }
     }
-    return bullets;
+    return nullptr;
 }
 
-void Magazine::setMagazine(Ammo ammo[], int size) {
-    this->size = size;
-    for (int i = 0; i < size; i++) {
-        this->ammo[i] = ammo[i];
-    }
+// Test end "getSpecialAmmo()"
+
+// Adds an Ammo object to the magazine.
+
+void Magazine::addAmmo(std::string caliber, int capacity) {
+    Ammo* am = new Ammo(caliber, capacity);
+    ammo.push_back(am);
+    delete am;
 }
 
-void Magazine::addAmmo(Ammo ammo) {
-    size++;
-    Ammo updatedSize[size];
-    for (int i = 0; i < size - 1; i++) {
-        updatedSize[i] = this->ammo[i];
-    }
-    updatedSize[size - 1] = ammo;
-    this->ammo[size - 1] = ammo;
+// Adds a SpecialAmmo object to the magazine.
+
+void Magazine::addSpecialAmmo(std::string caliber, int capacity, std::string effects) {
+    Ammo* specialAmmo = new SpecialAmmo(caliber, capacity, effects);
+    ammo.push_back(specialAmmo);
+    delete specialAmmo;
 }
+
+/*
 
 void Magazine::removeAmmo() {
     size--;
@@ -66,5 +80,7 @@ void Magazine::removeAmmo() {
         ammo[i] = updatedSize[i];
     }
 }
+
+*/
 
 #endif

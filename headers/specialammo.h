@@ -12,6 +12,7 @@ class SpecialAmmo : public Ammo {
     public:
         SpecialAmmo();
         SpecialAmmo(std::string caliber, int capacity, std::string effects);
+        ~SpecialAmmo() = default;
         std::string getEffects();
         void setEffects(std::string);
         void greetUser();

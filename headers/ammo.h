@@ -12,6 +12,7 @@ class Ammo {
     public:
         Ammo();
         Ammo(std::string caliber, int capacity);
+        virtual ~Ammo() = default;
         std::string getAmmo();
         void setAmmo(std::string, int);
         void greetUser();
