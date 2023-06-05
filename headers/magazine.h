@@ -17,8 +17,8 @@ class Magazine {
         Magazine();
         Magazine(int size);
         void getMagazine();
-        void addAmmo(std::string caliber, int capacity);
-        void addSpecialAmmo(std::string caliber, int capacity, std::string effects);
+        void addAmmo(std::string caliber);
+        void addSpecialAmmo(std::string caliber, std::string effects);
         SpecialAmmo* getSpecialAmmo();
         // void removeAmmo();
 };
@@ -54,16 +54,16 @@ SpecialAmmo* Magazine::getSpecialAmmo() {
 
 // Adds an Ammo object to the magazine.
 
-void Magazine::addAmmo(std::string caliber, int capacity) {
-    Ammo* am = new Ammo(caliber, capacity);
+void Magazine::addAmmo(std::string caliber) {
+    Ammo* am = new Ammo(caliber);
     ammo.push_back(am);
     delete am;
 }
 
 // Adds a SpecialAmmo object to the magazine.
 
-void Magazine::addSpecialAmmo(std::string caliber, int capacity, std::string effects) {
-    Ammo* specialAmmo = new SpecialAmmo(caliber, capacity, effects);
+void Magazine::addSpecialAmmo(std::string caliber, std::string effects) {
+    Ammo* specialAmmo = new SpecialAmmo(caliber, effects);
     ammo.push_back(specialAmmo);
     delete specialAmmo;
 }

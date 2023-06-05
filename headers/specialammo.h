@@ -22,7 +22,7 @@ SpecialAmmo::SpecialAmmo() {
     effects = "none";
 }
 
-SpecialAmmo::SpecialAmmo(std::string caliber, std::string effects) : Ammo(caliber, capacity) {
+SpecialAmmo::SpecialAmmo(std::string caliber, std::string effects) : Ammo(caliber) {
     this->effects = effects;
 }
 

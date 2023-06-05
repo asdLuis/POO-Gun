@@ -13,18 +13,16 @@ class Ammo {
         Ammo(std::string caliber);
         virtual ~Ammo() = default;
         std::string getAmmo();
-        void setAmmo(std::string, int);
+        void setAmmo(std::string);
         void displayInfo();
 };
 
 Ammo::Ammo() {
     caliber = "0";
-    capacity = 0;
 }
 
 Ammo::Ammo(std::string caliber) {
     this->caliber = caliber;
-    this->capacity = capacity;
 }
 
 std::string Ammo::getAmmo() {
