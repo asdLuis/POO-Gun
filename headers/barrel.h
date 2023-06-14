@@ -7,36 +7,44 @@
 class Barrel {
     private:
         int length;
-        std::string caliber;
+        int caliber;
         std::string material;
     
     public:
         Barrel();
-        Barrel(int length, std::string caliber, std::string material);
+        Barrel(int length, int caliber, std::string material);
         std::string getBarrel();
-        void setBarrel(int, std::string, std::string);
+        void setBarrelLen(int);
+        void setBarrelCal(int);
+        void setBarrelMat(std::string);
         void attachMuzzleDevice();
 };
 
 Barrel::Barrel() {
     length = 0;
-    caliber = "0";
+    caliber = 0;
     material = "wood";
 }
 
-Barrel::Barrel(int length, std::string caliber, std::string material) {
+Barrel::Barrel(int length, int caliber, std::string material) {
     this->length = length;
     this->caliber = caliber;
     this->material = material;
 }
 
 std::string Barrel::getBarrel() {
-    return "Length: " + std::to_string(length) + "\nCaliber: " + caliber + "\nMaterial: " + material;
+    return "Length: " + std::to_string(length) + "\nCaliber: " + std::to_string(caliber) + "\nMaterial: " + material;
 }
 
-void Barrel::setBarrel(int length, std::string caliber, std::string material) {
+void Barrel::setBarrelLen(int length) {
     this->length = length;
+}
+
+void Barrel::setBarrelCal(int caliber) {
     this->caliber = caliber;
+}
+
+void Barrel::setBarrelMat(std::string material) {
     this->material = material;
 }
 

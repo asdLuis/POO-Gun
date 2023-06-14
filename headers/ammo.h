@@ -14,7 +14,7 @@ class Ammo {
         virtual ~Ammo() = default;
         std::string getAmmo();
         void setAmmo(std::string);
-        void displayInfo();
+        virtual void displayInfo() = 0;
 };
 
 Ammo::Ammo() {

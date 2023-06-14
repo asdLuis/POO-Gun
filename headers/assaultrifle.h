@@ -24,11 +24,23 @@ class AssaultRifle {
         Handguard handguard;
         Grip grip;
     public:
+        AssaultRifle();
         AssaultRifle(Barrel barrel, Stock stock, TriggerMechanism triggerMechanism, FireSelector fireSelector, Magazine magazine, Sight sight, Handguard handguard, Grip grip);
         void assemble();
         void disassemble();
         void fire();
 };
+
+AssaultRifle::AssaultRifle() {
+    barrel = Barrel();
+    stock = Stock();
+    triggerMechanism = TriggerMechanism();
+    fireSelector = FireSelector();
+    magazine = Magazine();
+    sight = Sight();
+    handguard = Handguard();
+    grip = Grip();
+}
 
 AssaultRifle::AssaultRifle(Barrel barrel, Stock stock, TriggerMechanism triggerMechanism, FireSelector fireSelector, Magazine magazine, Sight sight, Handguard handguard, Grip grip) {
     this->barrel = barrel;

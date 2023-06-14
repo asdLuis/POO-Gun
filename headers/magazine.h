@@ -6,30 +6,23 @@
 #include <vector>
 #include "./ammo.h"
 #include "./specialammo.h"
+#include "./commonammo.h"
 
 class Magazine {
     private:
         // We create an array of Ammo objects to simulate a magazine.
         std::vector<Ammo *> ammo;
-        int size;
     
     public:
         Magazine();
-        Magazine(int size);
         void getMagazine();
-        void addAmmo(std::string caliber);
+        void addCommonAmmo(std::string caliber);
         void addSpecialAmmo(std::string caliber, std::string effects);
         SpecialAmmo* getSpecialAmmo();
         // void removeAmmo();
 };
 
-Magazine::Magazine() {
-    size = 0;
-}
-
-Magazine::Magazine(int size) {
-    this->size = size;
-}
+Magazine::Magazine() {};
 
 // Returns a string of all the ammo in the magazine.
 
@@ -54,8 +47,8 @@ SpecialAmmo* Magazine::getSpecialAmmo() {
 
 // Adds an Ammo object to the magazine.
 
-void Magazine::addAmmo(std::string caliber) {
-    Ammo* am = new Ammo(caliber);
+void Magazine::addCommonAmmo(std::string caliber) {
+    Ammo* am = new CommonAmmo(caliber);
     ammo.push_back(am);
     delete am;
 }
