@@ -10,7 +10,7 @@ class CommonAmmo : public Ammo{
     ~CommonAmmo() = default;
     std::string getCommonAmmo();
     void setCommonAmmo(std::string caliber);
-    void displayInfo();
+    std::string displayInfo();
 };
 
 CommonAmmo::CommonAmmo(){
@@ -29,8 +29,8 @@ void CommonAmmo::setCommonAmmo(std::string caliber){
     this->caliber = caliber;
 }
 
-void CommonAmmo::displayInfo(){
-    std::cout << "I am a bullet of " << caliber << "caliber and without an effect" << std::endl;
+std::string CommonAmmo::displayInfo(){
+    return "I am a bullet of " + caliber + " caliber and without an effect." + "\n";
 }
 
 #endif

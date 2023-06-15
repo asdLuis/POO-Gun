@@ -1,3 +1,10 @@
+/**
+ * @file fireselector.h
+ * @brief This is the declaration file for the Fire Selector class.
+ * @author Luis Isauro Zamano Morales
+ * @date 2023-06-14
+ */
+
 #ifndef FIRESELECTOR_H
 #define FIRESELECTOR_H
 
@@ -6,38 +13,20 @@
 
 class FireSelector {
     private:
-        bool toggleSelector; // True = Automatic, False = Semi-Automatic
+    // Attributes
+        std::string toggleSelector;
+        bool fireMode;
     
     public:
+    // Constructors
         FireSelector();
-        FireSelector(bool toggleSelector);
+        FireSelector(std::string toggleSelector, bool fireMode);
+    // Getters
         std::string getFireSelector();
-        void setFireSelector(bool toggleSelector);
+        void setFireSelector(std::string toggleSelector);
+    // Methods
         void toggleFireSelector();
+        std::string createFireSelector();
 };
-
-FireSelector::FireSelector() {
-    toggleSelector = true;
-};
-
-FireSelector::FireSelector(bool toggleSelector) {
-    this->toggleSelector = toggleSelector;
-};
-
-std::string FireSelector::getFireSelector() {
-    if (toggleSelector) {
-        return "Rate: Automatic";
-    } else {
-        return "Rate: Semi-Automatic";
-    }
-};
-
-void FireSelector::setFireSelector(bool toggleSelector) {
-    this->toggleSelector = toggleSelector;
-};
-
-void FireSelector::toggleFireSelector() {
-    toggleSelector = !toggleSelector;
-}
 
 #endif

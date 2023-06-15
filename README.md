@@ -27,3 +27,5 @@ Ejecución (Windows):
 Ejecute el programa en Windows usando el comando: a.exe
 
 El Programa de ensamblaje de armas permite a los usuarios construir su rifle de asalto ideal seleccionando y configurando varios componentes. Su objetivo es proporcionar una experiencia fluida e interactiva para los entusiastas de las armas de fuego y las personas interesadas en comprender el proceso de ensamblaje de armas de fuego.
+
+El programa, por cuestiones de simplicidad, trabaja con inputs numericos que hacen referencia a una seleccion. Es por esto que si se introduccen valores no validos es decir, un string donde se solicita un integer, el programa se rompera. Tambien hay que notar que no todas las funciones declaradas son usadas por razones de tiempo.

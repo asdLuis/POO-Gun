@@ -1,3 +1,10 @@
+/**
+ * @file sight.h
+ * @brief This is the declaration file for the Sight class.
+ * @author Luis Isauro Zamano Morales
+ * @date 2023-06-14
+ */
+
 #ifndef SIGHT_H
 #define SIGTH_H
 
@@ -6,33 +13,23 @@
 
 class Sight {
     private:
-        std::string type;
-        float radius;
+    // Attributes
+        std::string type; // Type of sight
+        float radius; // Radius of sight in mm
     
     public:
+    // Constructors
         Sight();
         Sight(std::string type, float radius);
+    // Getters
         std::string getSight();
-        void setSight(std::string, float);
+    // Setters
+        void setSightType(std::string type);
+        void setSightRadius(float radius);
+    // Methods
+        std::string createSight();
 };
 
-Sight::Sight() {
-    type = "0";
-    radius = 0;
-}
 
-Sight::Sight(std::string type, float radius) {
-    this->type = type;
-    this->radius = radius;
-}
-
-std::string Sight::getSight() {
-    return "Type: " + type + "\nRadius: " + std::to_string(radius);
-}
-
-void Sight::setSight(std::string type, float radius) {
-    this->type = type;
-    this->radius = radius;
-}
 
 #endif

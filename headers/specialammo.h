@@ -15,7 +15,7 @@ class SpecialAmmo : public Ammo {
         ~SpecialAmmo() = default;
         std::string getEffects();
         void setEffects(std::string);
-        void displayInfo();
+        std::string displayInfo();
 };
 
 SpecialAmmo::SpecialAmmo() {
@@ -34,8 +34,8 @@ void SpecialAmmo::setEffects(std::string effects) {
     this->effects = effects;
 }
 
-void SpecialAmmo::displayInfo() {
-    std::cout << "I am a bullet of " << caliber << "caliber and with the " << effects << "effect!" << std::endl;
+std::string SpecialAmmo::displayInfo() {
+    return "I am a bullet of " + caliber + " caliber and with an " +  effects + " effect!\n";
 }
 
 #endif

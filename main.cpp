@@ -1,42 +1,25 @@
+/**
+ * @file main.cpp
+ * @author Luis Isauro Zamano Morales
+ * @brief Main file for the Gun Assembly Simulator.
+ * @date 2023-05-29
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #ifndef MAIN_CPP
 #define MAIN_CPP
 
 #include <iostream>
 #include <string>
-#include <typeinfo>
-#include "headers\assaultrifle.h"
+#include <cctype>
+#include "drivers\simulator.cpp"
 
 int main() {
-    AssaultRifle ar;
+    Simulator sim;
 
-    // We declare a variable of type int, float, string, and bool.
-    int intVal;
-    float floatVal;
-    std::string strVal;
-    bool boolVal;
-
-    // Welcome message.
-    std::cout << "Welcome to the Assault Rifle Simulator!" << std::endl;
-    std::cout << "Press enter to continue..." << std::endl;
-    std::cin.get();
-
-    // We create our barrel and ask the user for the length, material, and caliber.
-    Barrel barrel;
-    std::cout << "What size of barrel length would you like to use?" << std::endl;
-    std::cin >> intVal;
-    // While loop to check if the user input is an integer.
-    do {
-        std::cout << "What size of barrel length would you like to use?" << std::endl;
-        std::cin >> intVal;
-    } while (!isdigit(intVal));
-
-    barrel.setBarrelLen(intVal);
-    std::cout << "What material would you like to use on your barrel?" << std::endl;
-    std::cin >> strVal;
-    barrel.setBarrelMat(strVal);
-    std::cout << "What caliber would you like to use on your barrel?" << std::endl;
-    std::cin >> intVal;
-    barrel.setBarrelCal(intVal);
+    sim.createNewSimulator();
 
     return 0;
 }

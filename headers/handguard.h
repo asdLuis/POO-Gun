@@ -1,3 +1,10 @@
+/**
+ * @file handguard.h
+ * @brief This is the declaration file for the Hand Guard class.
+ * @author Luis Isauro Zamano Morales
+ * @date 2023-06-14
+ */
+
 #ifndef HANDGUARD_H
 #define HANDGUARD_H
 
@@ -6,33 +13,23 @@
 
 class Handguard {
     private:
+    // Attributes
         float length;
         std::string material;
     
     public:
+    // Constructors
         Handguard();
         Handguard(float length, std::string material);
+    // Getters
         std::string getHandguard();
-        void setHandguard(float, std::string);
+    // Setters
+        void setHandguardLength(float length);
+        void setHandguardMaterial(std::string material);
+    // Methods
+        std::string createHandguard();
 };
 
-Handguard::Handguard() {
-    length = 0;
-    material = "plastic";
-}
 
-Handguard::Handguard(float length, std::string material) {
-    this->length = length;
-    this->material = material;
-}
-
-std::string Handguard::getHandguard() {
-    return "Length: " + std::to_string(length) + "\nMaterial: " + material;
-}
-
-void Handguard::setHandguard(float length, std::string material) {
-    this->length = length;
-    this->material = material;
-}
 
 #endif

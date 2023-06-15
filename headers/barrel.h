@@ -1,3 +1,10 @@
+/**
+ * @file barrel.h
+ * @brief This is the declaration file for the Barrel class.
+ * @author Luis Isauro Zamano Morales
+ * @date 2023-06-14
+ */
+
 #ifndef BARREL_H
 #define BARREL_H
 
@@ -6,50 +13,23 @@
 
 class Barrel {
     private:
-        int length;
-        int caliber;
-        std::string material;
+    // Attributes
+        double length; // Length in mm
+        int caliber; // Caliber in inches
+        std::string material; // Material of the barrel
     
     public:
+    // Constructors
         Barrel();
-        Barrel(int length, int caliber, std::string material);
+        Barrel(double length, int caliber, std::string material);
+    // Getters
         std::string getBarrel();
-        void setBarrelLen(int);
+    // Setters
+        void setBarrelLen(double);
         void setBarrelCal(int);
         void setBarrelMat(std::string);
-        void attachMuzzleDevice();
+    // Methods
+        std::string createBarrel();
 };
-
-Barrel::Barrel() {
-    length = 0;
-    caliber = 0;
-    material = "wood";
-}
-
-Barrel::Barrel(int length, int caliber, std::string material) {
-    this->length = length;
-    this->caliber = caliber;
-    this->material = material;
-}
-
-std::string Barrel::getBarrel() {
-    return "Length: " + std::to_string(length) + "\nCaliber: " + std::to_string(caliber) + "\nMaterial: " + material;
-}
-
-void Barrel::setBarrelLen(int length) {
-    this->length = length;
-}
-
-void Barrel::setBarrelCal(int caliber) {
-    this->caliber = caliber;
-}
-
-void Barrel::setBarrelMat(std::string material) {
-    this->material = material;
-}
-
-void Barrel::attachMuzzleDevice() {
-    std::cout << "Muzzle device attached." << std::endl;
-}
 
 #endif

@@ -1,10 +1,17 @@
+/**
+ * @file ammo.h
+ * @brief This is the declaration file for the Ammo class.
+ * @author Luis Isauro Zamano Morales
+ * @date 2023-06-14
+ */
+
 #ifndef AMMO_H
 #define AMMO_H
 
 #include <iostream>
 #include <string>
 
-class Ammo {
+class Ammo { // This is an abstract class
     protected:
         std::string caliber;
     
@@ -14,27 +21,7 @@ class Ammo {
         virtual ~Ammo() = default;
         std::string getAmmo();
         void setAmmo(std::string);
-        virtual void displayInfo() = 0;
+        virtual std::string displayInfo() = 0;
 };
-
-Ammo::Ammo() {
-    caliber = "0";
-}
-
-Ammo::Ammo(std::string caliber) {
-    this->caliber = caliber;
-}
-
-std::string Ammo::getAmmo() {
-    return "Caliber: " + caliber;
-}
-
-void Ammo::setAmmo(std::string caliber) {
-    this->caliber = caliber;
-}
-
-void Ammo::displayInfo() {
-    std::cout << "Im a" << caliber << "caliber bullet! And not special" << std::endl;
-}
 
 #endif

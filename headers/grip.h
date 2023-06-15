@@ -1,3 +1,10 @@
+/**
+ * @file handguard.cpp
+ * @brief This is the declaration file for the Hand Guard class.
+ * @author Luis Isauro Zamano Morales
+ * @date 2023-06-14
+ */
+
 #ifndef GRIP_H
 #define GRIP_H
 
@@ -6,37 +13,23 @@
 
 class Grip {
     private:
+    // Attributes
         std::string gripType;
         std::string gripMaterial;
         std::string gripAngle;
     
     public:
+    // Constructors
         Grip();
         Grip(std::string gripType, std::string gripMaterial, std::string gripAngle);
+    // Getters
         std::string getGrip();
-        void setGrip(std::string, std::string, std::string);
+    // Setters
+        void setGripType(std::string gripType);
+        void setGripMaterial(std::string gripMaterial);
+        void setGripAngle(std::string gripAngle);
+    // Methods
+        std::string createGrip();
 };
-
-Grip::Grip() {
-    gripType = "low";
-    gripMaterial = "rubber";
-    gripAngle = "0";
-}
-
-Grip::Grip(std::string gripType, std::string gripMaterial, std::string gripAngle) {
-    this->gripType = gripType;
-    this->gripMaterial = gripMaterial;
-    this->gripAngle = gripAngle;
-}
-
-std::string Grip::getGrip() {
-    return "Type: " + gripType + "\nMaterial: " + gripMaterial + "\nAngle: " + gripAngle;
-}
-
-void Grip::setGrip(std::string gripType, std::string gripMaterial, std::string gripAngle) {
-    this->gripType = gripType;
-    this->gripMaterial = gripMaterial;
-    this->gripAngle = gripAngle;
-}
 
 #endif

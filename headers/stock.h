@@ -1,3 +1,10 @@
+/**
+ * @file stock.h
+ * @brief This is the declaration file for the Stock class.
+ * @author Luis Isauro Zamano Morales
+ * @date 2023-06-14
+*/
+
 #ifndef STOCK_H
 #define STOCK_H
 
@@ -6,37 +13,23 @@
 
 class Stock {
     private:
+    // Attributes
         std::string type;
         std::string material;
         float lengthOfPull;
     
     public:
+    // Constructors
         Stock();
         Stock(std::string type, std::string material, float lengthOfPull);
+    // Getters
         std::string getStock();
-        void setStock(std::string, std::string, float);
+    // Setters
+        void setStockType(std::string type);
+        void setStockMaterial(std::string material);
+        void setStockLengthOfPull(float lengthOfPull);
+    // Methods
+        std::string createStock();
 };
-
-Stock::Stock() {
-    type = "0";
-    material = "0";
-    lengthOfPull = 0;
-}
-
-Stock::Stock(std::string type, std::string material, float lengthOfPull) {
-    this->type = type;
-    this->material = material;
-    this->lengthOfPull = lengthOfPull;
-}
-
-std::string Stock::getStock() {
-    return "Type: " + type + "\nMaterial: " + material + "\nLength of Pull: " + std::to_string(lengthOfPull);
-}
-
-void Stock::setStock(std::string type, std::string material, float lengthOfPull) {
-    this->type = type;
-    this->material = material;
-    this->lengthOfPull = lengthOfPull;
-}
 
 #endif
