@@ -1,0 +1,4 @@
+Revisiones:
+
+- UML corregido
+- Polimorfismo aplicado
