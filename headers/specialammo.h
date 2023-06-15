@@ -1,3 +1,10 @@
+/**
+ * @file specialammo.h
+ * @brief This is the declaration file for the Special Ammo class.
+ * @author Luis Isauro Zamano Morales
+ * @date 2023-06-14
+ */
+
 #ifndef SPECIALAMMO_H
 #define SPECIALAMMO_H
 
@@ -7,35 +14,20 @@
 
 class SpecialAmmo : public Ammo {
     private:
+    // Attributes
         std::string effects;
 
     public:
+    // Constructors
         SpecialAmmo();
         SpecialAmmo(std::string caliber, std::string effects);
+    // Destructor
         ~SpecialAmmo() = default;
+    // Getters and Setters
         std::string getEffects();
         void setEffects(std::string);
+    // Methods
         std::string displayInfo();
 };
-
-SpecialAmmo::SpecialAmmo() {
-    effects = "none";
-}
-
-SpecialAmmo::SpecialAmmo(std::string caliber, std::string effects) : Ammo(caliber) {
-    this->effects = effects;
-}
-
-std::string SpecialAmmo::getEffects() {
-    return effects;
-}
-
-void SpecialAmmo::setEffects(std::string effects) {
-    this->effects = effects;
-}
-
-std::string SpecialAmmo::displayInfo() {
-    return "I am a bullet of " + caliber + " caliber and with an " +  effects + " effect!\n";
-}
 
 #endif

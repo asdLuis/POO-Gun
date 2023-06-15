@@ -11,7 +11,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "./ammo.h"
+#include "../drivers/ammo.cpp"
 #include "./specialammo.h"
 #include "./commonammo.h"
 

@@ -13,15 +13,20 @@
 
 class Ammo { // This is an abstract class
     protected:
+    // Attributes
         std::string caliber;
     
     public:
+    // Constructors
         Ammo();
         Ammo(std::string caliber);
+    // Destructor
         virtual ~Ammo() = default;
+    // Getters and Setters
         std::string getAmmo();
         void setAmmo(std::string);
-        virtual std::string displayInfo() = 0;
+    // Methods
+        virtual std::string displayInfo() = 0; // Abstract virtual function
 };
 
 #endif
