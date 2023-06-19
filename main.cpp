@@ -13,8 +13,7 @@
 
 #include <iostream>
 #include <string>
-#include <cctype>
-#include "drivers\simulator.cpp"
+#include "./drivers/simulator.cpp"
 
 int main() {
     Simulator sim;
